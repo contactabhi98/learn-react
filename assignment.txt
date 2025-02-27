@@ -1,0 +1,238 @@
+1. What is Emmet?
+### **Emmet — The Essential Toolkit for Web Developers**  
+
+**Emmet** is a powerful **plugin** that speeds up HTML and CSS coding by using **short abbreviations** that expand into full-fledged code structures. It is widely supported in **VS Code, Sublime Text, Atom, and other IDEs**.  
+
+### **Key Features of Emmet:**  
+✔ **Fast HTML & CSS Coding** – Write abbreviations and expand them instantly.  
+✔ **Auto-closing & Nesting Support** – Automatically closes tags and supports nested structures.  
+✔ **Customizable Snippets** – Modify and add custom expansions.  
+✔ **Multi-Cursor & Sibling Support** – Expand multiple elements at once.  
+
+### **Examples:**  
+🔹 **HTML Expansion:**  
+Typing:  
+```html
+ul>li*5
+```  
+Expands to:  
+```html
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+```  
+
+🔹 **CSS Expansion:**  
+Typing:  
+```css
+m10p20
+```  
+Expands to:  
+```css
+margin: 10px;  
+padding: 20px;
+```  
+
+### **Why Use Emmet?**  
+🚀 Boosts productivity  
+⚡ Reduces repetitive typing  
+🛠 Simplifies complex structures  
+
+It's an **essential tool for web developers** to write code faster and more efficiently. Do you use Emmet in your workflow? 😊
+
+==================================================================================================================================================================================================================================================================
+
+2. Difference between a Library and Framework?
+### **Difference Between a Library and a Framework**  
+
+A **library** is a collection of reusable functions or modules that developers can call when needed. It provides specific functionalities without enforcing a strict structure.
+The developer remains in control of the flow of execution and decides when and how to use the library. For example, **React.js** is a UI library that allows developers to build 
+components as needed without dictating the overall application structure.  
+
+A **framework**, on the other hand, provides a complete structure for building an application. It follows the principle of **Inversion of Control (IoC)**, meaning the framework dictates the flow of execution and calls the developer’s code when required. This reduces flexibility but ensures consistency and best practices. For example, **Angular** is a frontend framework that enforces a particular way of building applications, including routing, state management, and component structure.  
+
+The key difference is: **"You call a library, but a framework calls you."** Libraries offer flexibility, while frameworks provide structure and enforce a specific way of working. 🚀
+
+==================================================================================================================================================================================================================================================================
+
+3. What is CDN? Why do we use it?
+A CDN (Content Delivery Network) is a globally distributed network of servers that helps deliver web content (such as images, videos, CSS, JavaScript, and HTML files) faster by caching them in multiple locations closer to users.
+
+Why Do We Use a CDN?
+Faster Load Times 🚀 – Content is served from the nearest server to reduce latency.
+Improved Website Performance ⚡ – Reduces server load by distributing traffic.
+Better Scalability 📈 – Handles high traffic efficiently without overloading the origin server.
+Enhanced Security 🔒 – Protects against DDoS attacks and provides SSL/TLS encryption.
+Global Reach 🌍 – Ensures a smooth user experience for audiences worldwide.
+Popular CDN providers include Cloudflare, Akamai, AWS CloudFront, and Google Cloud CDN.
+
+==================================================================================================================================================================================================================================================================
+
+4. Why is React known as React?
+React is called **"React"** because it is designed to efficiently **react** to changes in data and update the user interface accordingly.  
+
+### **Why the Name "React"?**  
+1. **Reactive UI Updates** – React **automatically re-renders** components when data changes, making the UI highly responsive.  
+2. **Virtual DOM Optimization** – Instead of updating the entire page, React **efficiently updates only the necessary parts** using its **Virtual DOM**.  
+3. **Component-Based Architecture** – React breaks the UI into reusable **components** that can react independently to data changes.  
+4. **Declarative Programming** – Developers declare how the UI should look based on state, and React reacts to state changes by updating the UI accordingly.  
+
+### **Summary**  
+The name **"React"** reflects its core functionality: **reacting to data changes and efficiently updating the UI**. 🚀
+
+==================================================================================================================================================================================================================================================================
+
+5. What is `crossorigin` in the `<script>` Tag?
+
+The `crossorigin` attribute in the `<script>` tag is used when loading **external scripts** (from a different domain) and controls how the browser handles **CORS (Cross-Origin Resource Sharing)** requests.  
+
+### **Why is `crossorigin` Used?**  
+- When a script is loaded from a **different origin (CDN, third-party domain, etc.)**, the browser may restrict access to the script's data due to **security policies**.  
+- The `crossorigin` attribute ensures that the script is fetched **correctly** and allows controlled access to error details.  
+
+---
+
+### **`crossorigin` Attribute Values**
+1. **`anonymous` (Default)**  
+   - The script is fetched without sending user credentials (cookies, HTTP authentication, etc.).  
+   - Works only if the external server allows anonymous requests (CORS headers).  
+   - Example:
+     ```html
+     <script src="https://cdn.example.com/script.js" crossorigin="anonymous"></script>
+     ```
+
+2. **`use-credentials`**  
+   - The script is fetched **with user credentials** (cookies, authentication headers).  
+   - Requires the external server to allow credentials via the `Access-Control-Allow-Credentials: true` header.  
+   - Example:
+     ```html
+     <script src="https://cdn.example.com/script.js" crossorigin="use-credentials"></script>
+     ```
+
+3. **No `crossorigin` Attribute**  
+   - The browser loads the script **without CORS checks** (default behavior for same-origin scripts).  
+   - For cross-origin scripts, errors won't be visible in the console due to security restrictions.  
+
+---
+
+### **When Should You Use `crossorigin`?**
+- **CDN-hosted scripts (e.g., jQuery, React from a CDN)** should use `crossorigin="anonymous"` to allow better error handling.  
+- **Scripts requiring authentication** should use `crossorigin="use-credentials"`.  
+- **For same-origin scripts**, `crossorigin` is **not needed**.  
+
+Would you like an example of how CORS headers work with this? 🚀
+
+==================================================================================================================================================================================================================================================================
+
+6. What is diference between React and ReactDOM
+### **Difference Between React and ReactDOM**  
+
+**React** and **ReactDOM** are both part of the React library, but they serve different purposes.  
+
+### **1. React (`react` package)**
+- **Purpose**: React is the **core library** responsible for creating UI components and managing state.  
+- **Used for**: Writing **components, hooks, and handling state** in a React application.  
+- **Example Usage**:  
+  ```jsx
+  import React, { useState } from "react";
+
+  function Counter() {
+    const [count, setCount] = useState(0);
+    return <button onClick={() => setCount(count + 1)}>Count: {count}</button>;
+  }
+  ```
+
+---
+
+### **2. ReactDOM (`react-dom` package)**
+- **Purpose**: ReactDOM is responsible for rendering React components into the **actual DOM** in web applications.  
+- **Used for**: Interacting with the browser’s DOM and attaching React components to the root HTML element.  
+- **Example Usage**:  
+  ```jsx
+  import React from "react";
+  import ReactDOM from "react-dom/client";
+  import App from "./App";
+
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(<App />);
+  ```
+
+---
+
+### **Key Differences**  
+1. **React (`react`) is the core library** – it provides component-based UI development, state management, and hooks.  
+2. **ReactDOM (`react-dom`) handles rendering** – it connects React components to the browser’s actual DOM.  
+3. **React can work independently** (e.g., in React Native, where `react-dom` is not needed), but **ReactDOM is specifically for web applications**.  
+
+Would you like a deeper dive into any part of this? 😊🚀
+
+==================================================================================================================================================================================================================================================================
+7. What is difference between react.development.js and react.production.js files via CDN?
+### **Difference Between `react.development.js` and `react.production.js` (via CDN)**  
+
+When using React from a **CDN**, there are two different versions of the library:  
+
+1. **`react.development.js`** – Used for development (debugging & testing).  
+2. **`react.production.js`** – Used for production (optimized for performance).  
+
+---
+
+### **1. `react.development.js` (Development Version)**
+- **Larger in size** because it includes helpful **warnings, error messages, and debugging tools**.  
+- **Useful for development** as it provides detailed error messages and warnings (e.g., `propTypes` validation, unused states).  
+- **Not optimized for performance**, as it includes extra checks for a better developer experience.  
+
+✅ Example (Development CDN):  
+```html
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+```
+
+---
+
+### **2. `react.production.js` (Production Version)**
+- **Smaller in size** because debugging features and warnings are removed.  
+- **Optimized for performance**, making the app load faster.  
+- **Better for end users** as it reduces unnecessary checks and improves rendering speed.  
+
+✅ Example (Production CDN):  
+```html
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+```
+==================================================================================================================================================================================================================================================================
+8. What is async and defer
+### **Difference Between `async` and `defer`**  
+
+Both `async` and `defer` are attributes used in the `<script>` tag to control how JavaScript files are loaded in an HTML document. They improve page speed by **loading scripts without blocking** the HTML parsing.  
+
+#### **`async` (Asynchronous Loading)**
+When a script has the `async` attribute, the browser **downloads** it in parallel while parsing the HTML. However, once the script is downloaded, it **executes immediately**, pausing HTML parsing until the script runs completely.  
+
+This means scripts with `async` **do not guarantee execution order** if multiple scripts are loaded. It is best used for scripts that don’t depend on each other or the DOM, such as analytics or advertisements.  
+
+✅ **Example**:  
+```html
+<script src="script.js" async></script>
+```
+
+#### **`defer` (Deferred Execution)**
+The `defer` attribute also allows scripts to be downloaded in parallel with HTML parsing. However, unlike `async`, it ensures that scripts **execute only after HTML parsing is fully complete**. Additionally, if multiple scripts have `defer`, they **execute in the order they appear** in the document.  
+
+This makes `defer` ideal for scripts that modify or depend on the DOM structure, ensuring everything is ready before they run.  
+
+✅ **Example**:  
+```html
+<script src="script.js" defer></script>
+```
+
+#### **Key Differences**
+1. **Execution Timing** – `async` scripts run as soon as they are downloaded, while `defer` scripts wait until the HTML is fully parsed.  
+2. **Order of Execution** – `async` scripts may execute in **any order**, whereas `defer` scripts execute **in sequence** as they appear.  
+3. **Use Cases** – `async` is ideal for independent scripts (like ads or analytics), whereas `defer` is best for scripts that modify the DOM.  
+
+Would you like an example where both are used together? 🚀😊
